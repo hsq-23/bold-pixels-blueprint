@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Layout from '../components/Layout';
 import ProjectCard from '../components/ProjectCard';
+import { motion } from 'framer-motion';
 
 // Sample projects data
 const allProjects = [
@@ -101,10 +102,22 @@ const Projects = () => {
       {/* Hero Section */}
       <section className="py-20 bg-pastel-pink">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 font-space-grotesk">My Projects</h1>
-          <p className="text-xl max-w-4xl">
+          <motion.h1 
+            className="text-4xl md:text-5xl font-bold mb-6 font-space-grotesk"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            My Projects
+          </motion.h1>
+          <motion.p 
+            className="text-xl max-w-4xl"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
             A collection of my work across web development, IoT solutions, and data science. Each project represents a unique challenge and solution.
-          </p>
+          </motion.p>
         </div>
       </section>
       
@@ -113,20 +126,30 @@ const Projects = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center space-y-6 md:space-y-0">
             <div className="flex flex-wrap gap-3">
-              {categories.map(category => (
-                <button
+              {categories.map((category, index) => (
+                <motion.button
                   key={category}
                   className={`px-4 py-2 border-2 border-black ${
                     activeCategory === category ? 'bg-black text-white' : 'bg-white'
                   }`}
                   onClick={() => setActiveCategory(category)}
+                  whileHover={{ scale: 1.05, translateY: -3 }}
+                  whileTap={{ scale: 0.95 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.2, delay: index * 0.1 }}
                 >
                   {category}
-                </button>
+                </motion.button>
               ))}
             </div>
             
-            <div className="w-full md:w-auto">
+            <motion.div 
+              className="w-full md:w-auto"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.3, delay: 0.3 }}
+            >
               <input
                 type="text"
                 placeholder="Search projects..."
@@ -134,7 +157,7 @@ const Projects = () => {
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -144,18 +167,27 @@ const Projects = () => {
         <div className="container mx-auto px-4">
           {filteredProjects.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredProjects.map(project => (
-                <ProjectCard 
-                  key={project.id} 
-                  {...project} 
-                />
+              {filteredProjects.map((project, index) => (
+                <motion.div
+                  key={project.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                >
+                  <ProjectCard {...project} />
+                </motion.div>
               ))}
             </div>
           ) : (
-            <div className="text-center py-20">
+            <motion.div 
+              className="text-center py-20"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+            >
               <h3 className="text-2xl font-bold mb-4 font-space-grotesk">No projects found</h3>
               <p>Try adjusting your search or filter criteria.</p>
-            </div>
+            </motion.div>
           )}
         </div>
       </section>
@@ -163,13 +195,39 @@ const Projects = () => {
       {/* Contact CTA */}
       <section className="py-20 bg-neon-green">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 font-space-grotesk">Have a project in mind?</h2>
-          <p className="text-lg mb-8 max-w-2xl mx-auto">
+          <motion.h2 
+            className="text-3xl md:text-4xl font-bold mb-6 font-space-grotesk"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            Have a project in mind?
+          </motion.h2>
+          <motion.p 
+            className="text-lg mb-8 max-w-2xl mx-auto"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
             I'm always looking for interesting projects and collaborations. Let's discuss how I can help bring your ideas to life.
-          </p>
-          <div className="inline-block neo-button bg-black text-white">
-            <Link to="/contact">Get In Touch</Link>
-          </div>
+          </motion.p>
+          <motion.div 
+            className="inline-block"
+            whileHover={{ scale: 1.05, translateY: -5 }}
+            whileTap={{ scale: 0.95 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ 
+              duration: 0.3, 
+              delay: 0.4,
+              type: "spring",
+              stiffness: 300,
+            }}
+          >
+            <Link to="/contact" className="neo-button bg-black text-white">
+              Get In Touch
+            </Link>
+          </motion.div>
         </div>
       </section>
     </Layout>
