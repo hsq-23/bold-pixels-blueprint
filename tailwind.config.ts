@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,20 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Neobrutalism colors
+				neon: {
+					pink: '#FF61D8',
+					green: '#00F090',
+					yellow: '#FFEC5C',
+					blue: '#5CE1FF',
+				},
+				pastel: {
+					pink: '#FFD6EC',
+					green: '#D6FFE4',
+					yellow: '#FFFBD6',
+					blue: '#D6F5FF',
+				},
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -70,25 +84,37 @@ export default {
 			},
 			keyframes: {
 				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
+					from: { height: '0' },
+					to: { height: 'var(--radix-accordion-content-height)' }
 				},
 				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
-					},
-					to: {
-						height: '0'
-					}
+					from: { height: 'var(--radix-accordion-content-height)' },
+					to: { height: '0' }
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-10px)' }
+				},
+				'wiggle': {
+					'0%, 100%': { transform: 'rotate(-3deg)' },
+					'50%': { transform: 'rotate(3deg)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'float': 'float 6s ease-in-out infinite',
+				'wiggle': 'wiggle 1s ease-in-out infinite'
+			},
+			boxShadow: {
+				'neo': '6px 6px 0px 0px rgba(0,0,0,1)',
+				'neo-sm': '4px 4px 0px 0px rgba(0,0,0,1)',
+				'neo-lg': '8px 8px 0px 0px rgba(0,0,0,1)',
+			},
+			fontFamily: {
+				'space-grotesk': ['Space Grotesk', 'sans-serif'],
+				'satoshi': ['Satoshi', 'sans-serif'],
+				'inter': ['Inter', 'sans-serif'],
 			}
 		}
 	},
