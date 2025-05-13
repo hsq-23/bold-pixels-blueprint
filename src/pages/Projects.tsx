@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Layout from '../components/Layout';
@@ -14,7 +13,9 @@ const allProjects = [
     imageUrl: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
     tags: ["IoT", "Home Automation", "Arduino", "Raspberry Pi"],
     category: "IoT",
-    colorClass: "bg-pastel-blue"
+    colorClass: "bg-pastel-blue",
+    githubUrl: "https://github.com/johndoe/smart-home",
+    demoUrl: "https://smarthome-demo.example.com"
   },
   {
     id: "project2",
@@ -23,7 +24,9 @@ const allProjects = [
     imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
     tags: ["Data Science", "React", "D3.js", "API"],
     category: "Data Science",
-    colorClass: "bg-pastel-green"
+    colorClass: "bg-pastel-green",
+    githubUrl: "https://github.com/johndoe/ecommerce-analytics",
+    demoUrl: "https://analytics-demo.example.com"
   },
   {
     id: "project3",
@@ -32,7 +35,9 @@ const allProjects = [
     imageUrl: "https://images.unsplash.com/photo-1677442135137-3743b6be7237?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80",
     tags: ["AI", "ML", "Python", "NLP"],
     category: "Data Science",
-    colorClass: "bg-pastel-pink"
+    colorClass: "bg-pastel-pink",
+    githubUrl: "https://github.com/johndoe/ai-content-gen",
+    demoUrl: "https://ai-content.example.com"
   },
   {
     id: "project4",
@@ -41,7 +46,9 @@ const allProjects = [
     imageUrl: "https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
     tags: ["IoT", "Environmental", "ESP32", "Sensors"],
     category: "IoT",
-    colorClass: "bg-pastel-yellow"
+    colorClass: "bg-pastel-yellow",
+    githubUrl: "https://github.com/johndoe/env-monitor",
+    demoUrl: "https://envmon.example.com"
   },
   {
     id: "project5",
@@ -50,7 +57,9 @@ const allProjects = [
     imageUrl: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
     tags: ["Web Development", "React", "Node.js", "MongoDB"],
     category: "Web Development",
-    colorClass: "bg-pastel-blue"
+    colorClass: "bg-pastel-blue",
+    githubUrl: "https://github.com/johndoe/finance-app",
+    demoUrl: "https://finance.example.com"
   },
   {
     id: "project6",
@@ -59,7 +68,9 @@ const allProjects = [
     imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1115&q=80",
     tags: ["Data Science", "Python", "Clustering", "Marketing"],
     category: "Data Science",
-    colorClass: "bg-pastel-green"
+    colorClass: "bg-pastel-green",
+    githubUrl: "https://github.com/johndoe/customer-segments",
+    demoUrl: "https://segments.example.com"
   },
   {
     id: "project7",
@@ -68,7 +79,9 @@ const allProjects = [
     imageUrl: "https://images.unsplash.com/photo-1586771107445-d3ca888129ce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=772&q=80",
     tags: ["IoT", "Agriculture", "Water Conservation", "Sensors"],
     category: "IoT",
-    colorClass: "bg-pastel-pink"
+    colorClass: "bg-pastel-pink",
+    githubUrl: "https://github.com/johndoe/smart-irrigation",
+    demoUrl: "https://irrigation.example.com"
   },
   {
     id: "project8",
@@ -77,7 +90,9 @@ const allProjects = [
     imageUrl: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
     tags: ["Web Development", "React", "Firebase", "Video Streaming"],
     category: "Web Development",
-    colorClass: "bg-pastel-yellow"
+    colorClass: "bg-pastel-yellow",
+    githubUrl: "https://github.com/johndoe/elearning",
+    demoUrl: "https://learn.example.com"
   }
 ];
 
