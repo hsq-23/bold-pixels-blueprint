@@ -5,7 +5,7 @@ interface SkillsListProps {
   title: string;
   skills: Array<{
     name: string;
-    level?: number; // 1-5 where 5 is highest
+    level?: number; // keeping this in the interface for backward compatibility
     icon?: React.ReactNode;
   }>;
   colorClass?: string;
@@ -20,24 +20,9 @@ const SkillsList: React.FC<SkillsListProps> = ({ title, skills, colorClass = "bg
       
       <ul className="space-y-3">
         {skills.map((skill, index) => (
-          <li key={index} className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              {skill.icon && <span>{skill.icon}</span>}
-              <span>{skill.name}</span>
-            </div>
-            
-            {skill.level && (
-              <div className="flex items-center gap-1">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <div 
-                    key={i} 
-                    className={`w-3 h-3 border border-black ${
-                      i < skill.level! ? 'bg-black' : 'bg-white'
-                    }`}
-                  ></div>
-                ))}
-              </div>
-            )}
+          <li key={index} className="flex items-center gap-2">
+            {skill.icon && <span>{skill.icon}</span>}
+            <span>{skill.name}</span>
           </li>
         ))}
       </ul>

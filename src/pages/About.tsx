@@ -6,21 +6,21 @@ import { Link } from 'react-router-dom';
 
 // Sample skills data
 const technicalSkills = [
-  { name: "JavaScript/TypeScript", level: 5 },
-  { name: "React & React Native", level: 5 },
-  { name: "Node.js", level: 4 },
-  { name: "Python", level: 4 },
-  { name: "IoT Prototyping", level: 5 },
-  { name: "TensorFlow & PyTorch", level: 3 },
-  { name: "SQL & NoSQL Databases", level: 4 },
-  { name: "AWS & Cloud Services", level: 4 }
+  { name: "JavaScript/TypeScript" },
+  { name: "React & React Native" },
+  { name: "Node.js" },
+  { name: "Python" },
+  { name: "IoT Prototyping" },
+  { name: "TensorFlow & PyTorch" },
+  { name: "SQL & NoSQL Databases" },
+  { name: "AWS & Cloud Services" }
 ];
 
 const designSkills = [
-  { name: "UI/UX Design", level: 4 },
-  { name: "Responsive Design", level: 5 },
-  { name: "Figma & Sketch", level: 4 },
-  { name: "Design Systems", level: 3 }
+  { name: "UI/UX Design" },
+  { name: "Responsive Design" },
+  { name: "Figma & Sketch" },
+  { name: "Design Systems" }
 ];
 
 const toolsUsed = [
@@ -51,7 +51,7 @@ const About = () => {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-3xl font-bold mb-6 font-space-grotesk">My Journey</h2>
+            <h2 className="text-3xl font-bold mb-6 font-space-grotesk px-6 py-3 bg-pastel-pink inline-block border-4 border-black shadow-neo">My Journey</h2>
             <div className="space-y-4">
               <p>
                 With over 8 years of experience in the tech industry, I've worked on projects ranging from small startups to enterprise-level applications. My background in computer science, combined with my passion for IoT and data science, allows me to approach problems from multiple perspectives.
@@ -86,7 +86,7 @@ const About = () => {
       {/* Skills Section */}
       <section className="py-20 bg-pastel-yellow">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-12 font-space-grotesk text-center">Skills & Expertise</h2>
+          <h2 className="text-3xl font-bold mb-12 font-space-grotesk text-center px-8 py-4 bg-neon-green inline-block border-4 border-black shadow-neo mx-auto">Skills & Expertise</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <SkillsList 
@@ -113,7 +113,7 @@ const About = () => {
       {/* Experience Section */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-12 font-space-grotesk text-center">Work Experience</h2>
+          <h2 className="text-3xl font-bold mb-12 font-space-grotesk text-center px-6 py-3 bg-pastel-green inline-block border-4 border-black shadow-neo mx-auto">Work Experience</h2>
           
           <div className="space-y-12 max-w-4xl mx-auto">
             <div className="neo-card p-6">
@@ -176,7 +176,7 @@ const About = () => {
       {/* Education Section */}
       <section className="py-20 bg-pastel-green">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-12 font-space-grotesk text-center">Education</h2>
+          <h2 className="text-3xl font-bold mb-12 font-space-grotesk text-center px-8 py-4 bg-neon-blue text-white inline-block border-4 border-black shadow-neo mx-auto">Education</h2>
           
           <div className="space-y-8 max-w-4xl mx-auto">
             <div className="neo-card p-6">
@@ -201,9 +201,9 @@ const About = () => {
       </section>
       
       {/* CTA Section */}
-      <section className="py-20 bg-neon-blue text-white">
+      <section className="py-20 bg-neon-pink text-black">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 font-space-grotesk">Ready to start a project?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 font-space-grotesk px-8 py-4 bg-white inline-block border-4 border-black shadow-neo mx-auto">Ready to start a project?</h2>
           <p className="text-lg mb-8 max-w-2xl mx-auto">
             Let's collaborate to turn your ideas into reality. Whether you need a website, IoT solution, or data analysis, I'm here to help.
           </p>
