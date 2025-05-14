@@ -62,7 +62,7 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Neobrutalism colors with improved contrast
+				// Enhanced neobrutalism colors with improved contrast
 				neon: {
 					pink: '#FF61D8',
 					green: '#00F090',
@@ -75,11 +75,16 @@ export default {
 					yellow: '#FFFBD6',
 					blue: '#D6F5FF',
 				},
-				// Added high contrast text colors
+				// Enhanced high contrast text colors
 				contrast: {
-					light: '#121212', // Dark text for light backgrounds
-					dark: '#F8F9FA',  // Light text for dark backgrounds
-					accent: '#000000' // Black text for colorful backgrounds
+					light: '#000000', // Darker text for light backgrounds
+					dark: '#FFFFFF',  // Lighter text for dark backgrounds
+					accent: '#000000', // Black text for colorful backgrounds
+					// Adding extra contrast options for specific cases
+					onNeon: '#000000', // Black text for neon backgrounds
+					onPastel: '#000000', // Black text for pastel backgrounds
+					onDark: '#FFFFFF',  // White text for dark backgrounds
+					onLight: '#000000', // Black text for light backgrounds
 				}
 			},
 			borderRadius: {

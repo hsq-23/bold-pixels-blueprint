@@ -35,8 +35,8 @@ const Navbar: React.FC = () => {
   const navLinkClass = (path: string) => {
     return `font-bold hover:underline transition-colors ${
       isActive(path) 
-        ? 'bg-accent text-contrast-accent border-2 px-3 py-1 rounded border-black dark:border-white' 
-        : 'text-high-contrast hover:text-primary'
+        ? 'bg-accent border-2 px-3 py-1 rounded border-black dark:border-white text-black dark:text-black' 
+        : 'text-black dark:text-white hover:text-primary'
     }`;
   };
 
@@ -45,7 +45,7 @@ const Navbar: React.FC = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="text-2xl font-bold font-space-grotesk">
-            <span className="bg-neon-blue px-2 text-contrast-accent">JOHN</span> <span className="bg-neon-pink px-2 text-white dark:text-black">DOE</span>
+            <span className="bg-neon-blue px-2 text-black">JOHN</span> <span className="bg-neon-pink px-2 text-black">DOE</span>
           </Link>
           
           {/* Desktop Navigation */}
@@ -60,9 +60,9 @@ const Navbar: React.FC = () => {
               variant="outline" 
               size="icon" 
               onClick={toggleDarkMode}
-              className="ml-2 border-2 border-black dark:border-white text-high-contrast"
+              className="ml-2 border-2 border-black dark:border-white text-black dark:text-white"
             >
-              {isDarkMode ? <Sun className="h-5 w-5 text-contrast-dark" /> : <Moon className="h-5 w-5 text-contrast-light" />}
+              {isDarkMode ? <Sun className="h-5 w-5 text-white" /> : <Moon className="h-5 w-5 text-black" />}
             </Button>
           </nav>
           
@@ -71,9 +71,9 @@ const Navbar: React.FC = () => {
             className="md:hidden border-2 border-black dark:border-white p-2" 
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            <div className="w-6 h-0.5 bg-foreground mb-1.5"></div>
-            <div className="w-6 h-0.5 bg-foreground mb-1.5"></div>
-            <div className="w-6 h-0.5 bg-foreground"></div>
+            <div className="w-6 h-0.5 bg-black dark:bg-white mb-1.5"></div>
+            <div className="w-6 h-0.5 bg-black dark:bg-white mb-1.5"></div>
+            <div className="w-6 h-0.5 bg-black dark:bg-white"></div>
           </button>
         </div>
         
@@ -89,9 +89,9 @@ const Navbar: React.FC = () => {
             <Button 
               variant="outline" 
               onClick={toggleDarkMode} 
-              className="flex items-center space-x-2 border-2 border-black dark:border-white w-fit text-high-contrast"
+              className="flex items-center space-x-2 border-2 border-black dark:border-white w-fit text-black dark:text-white"
             >
-              {isDarkMode ? <Sun className="h-5 w-5 text-contrast-dark" /> : <Moon className="h-5 w-5 text-contrast-light" />}
+              {isDarkMode ? <Sun className="h-5 w-5 text-white" /> : <Moon className="h-5 w-5 text-black" />}
               <span>{isDarkMode ? 'Light Mode' : 'Dark Mode'}</span>
             </Button>
           </nav>

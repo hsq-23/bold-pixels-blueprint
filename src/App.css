@@ -1,3 +1,4 @@
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -35,8 +36,20 @@
 
 .card {
   padding: 2em;
+  background-color: white;
+  color: black;
 }
 
 .read-the-docs {
-  color: #888;
+  color: #444;
+}
+
+/* High contrast mode */
+.dark .card {
+  background-color: #333;
+  color: white;
+}
+
+.dark .read-the-docs {
+  color: #bbb;
 }
