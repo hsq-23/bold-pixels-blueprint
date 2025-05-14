@@ -9,7 +9,7 @@ const Hero: React.FC = () => {
       <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         <div className="order-2 md:order-1">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 font-space-grotesk leading-tight">
-            Hi, I'm <span className="bg-neon-pink text-white px-2">John Doe</span>
+            Hi, I'm <span className="bg-neon-pink text-white px-2">Elvan Nasrul</span>
           </h1>
           
           <h2 className="text-2xl md:text-4xl font-bold mb-6 font-satoshi">
@@ -35,8 +35,8 @@ const Hero: React.FC = () => {
             <div className="w-full pb-[100%] bg-gray-200 border-2 border-black overflow-hidden">
               {/* Replace with actual image */}
               <img 
-                src="https://images.unsplash.com/photo-1600486913747-55e5470d6f40?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" 
-                alt="John Doe's Portrait" 
+                src="https://media.licdn.com/dms/image/v2/D5603AQF1nlRhdj4_Dw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1688928682259?e=1752710400&v=beta&t=geTlsiLwrqrysWIF8avbQV-H10wKnKw7W53xMfKcLqI0" 
+                alt="Elvan Nasrul's Portrait" 
                 className="absolute top-0 left-0 w-full h-full object-cover"
               />
             </div>
