@@ -35,8 +35,8 @@ const Navbar: React.FC = () => {
   const navLinkClass = (path: string) => {
     return `font-bold hover:underline transition-colors ${
       isActive(path) 
-        ? 'bg-accent px-2 border-b-2 border-black dark:border-white' 
-        : ''
+        ? 'bg-accent text-contrast-accent border-2 px-3 py-1 rounded border-black dark:border-white' 
+        : 'text-high-contrast hover:text-primary'
     }`;
   };
 
@@ -45,7 +45,7 @@ const Navbar: React.FC = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="text-2xl font-bold font-space-grotesk">
-            <span className="bg-neon-blue px-2">JOHN</span> <span className="bg-neon-pink px-2 text-white">DOE</span>
+            <span className="bg-neon-blue px-2 text-contrast-accent">JOHN</span> <span className="bg-neon-pink px-2 text-white dark:text-black">DOE</span>
           </Link>
           
           {/* Desktop Navigation */}
@@ -60,9 +60,9 @@ const Navbar: React.FC = () => {
               variant="outline" 
               size="icon" 
               onClick={toggleDarkMode}
-              className="ml-2 border-2 border-black dark:border-white"
+              className="ml-2 border-2 border-black dark:border-white text-high-contrast"
             >
-              {isDarkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+              {isDarkMode ? <Sun className="h-5 w-5 text-contrast-dark" /> : <Moon className="h-5 w-5 text-contrast-light" />}
             </Button>
           </nav>
           
@@ -89,9 +89,9 @@ const Navbar: React.FC = () => {
             <Button 
               variant="outline" 
               onClick={toggleDarkMode} 
-              className="flex items-center space-x-2 border-2 border-black dark:border-white w-fit"
+              className="flex items-center space-x-2 border-2 border-black dark:border-white w-fit text-high-contrast"
             >
-              {isDarkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+              {isDarkMode ? <Sun className="h-5 w-5 text-contrast-dark" /> : <Moon className="h-5 w-5 text-contrast-light" />}
               <span>{isDarkMode ? 'Light Mode' : 'Dark Mode'}</span>
             </Button>
           </nav>

@@ -85,7 +85,7 @@
   }
   
   .dark .neo-button {
-    @apply bg-neon-yellow border-2 border-white text-black px-8 py-3 shadow-neo-sm font-bold transition-all duration-200 hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-neo;
+    @apply bg-neon-yellow border-2 border-white text-contrast-accent px-8 py-3 shadow-neo-sm font-bold transition-all duration-200 hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-neo;
   }
   
   .dark .neo-input {
@@ -94,7 +94,31 @@
   
   /* Ensure icons are visible in dark mode */
   .dark svg {
-    @apply text-current;
+    @apply text-contrast-dark;
+  }
+
+  /* Improved text contrast for headings in dark mode */
+  .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+    @apply text-contrast-dark;
+  }
+
+  /* Improved text contrast for paragraphs in dark mode */
+  .dark p {
+    @apply text-gray-200;
+  }
+
+  /* Improved contrast for links in dark mode */
+  .dark a:not(.neo-button) {
+    @apply text-neon-blue hover:text-white transition-colors;
+  }
+
+  /* Improved contrast for colorful backgrounds in dark mode */
+  .dark .bg-pastel-blue, .dark .bg-pastel-green, .dark .bg-pastel-yellow, .dark .bg-pastel-pink {
+    @apply text-contrast-accent border-white;
+  }
+  
+  .dark .bg-neon-blue, .dark .bg-neon-green, .dark .bg-neon-yellow, .dark .bg-neon-pink {
+    @apply text-contrast-accent border-white;
   }
 }
 
@@ -108,7 +132,7 @@
   }
   
   .neo-button {
-    @apply bg-neon-yellow border-2 border-black px-8 py-3 shadow-neo-sm font-bold transition-all duration-200 hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-neo;
+    @apply bg-neon-yellow border-2 border-black text-contrast-accent px-8 py-3 shadow-neo-sm font-bold transition-all duration-200 hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-neo;
   }
   
   .neo-input {
@@ -123,4 +147,26 @@
   .section-divider {
     @apply h-2 bg-black dark:bg-white my-0;
   }
+
+  /* Text contrast helpers */
+  .text-high-contrast {
+    @apply text-contrast-light dark:text-contrast-dark;
+  }
+
+  .text-on-accent {
+    @apply text-contrast-accent;
+  }
+}
+
+/* Additional contrast helpers for special cases */
+.bg-neon-pink {
+  @apply text-white dark:text-black;
+}
+
+.bg-neon-blue {
+  @apply text-black dark:text-black;
+}
+
+.bg-pastel-blue, .bg-pastel-green, .bg-pastel-yellow, .bg-pastel-pink {
+  @apply text-black dark:text-contrast-accent;
 }

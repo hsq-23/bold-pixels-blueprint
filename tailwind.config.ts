@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -63,7 +62,7 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Neobrutalism colors
+				// Neobrutalism colors with improved contrast
 				neon: {
 					pink: '#FF61D8',
 					green: '#00F090',
@@ -76,6 +75,12 @@ export default {
 					yellow: '#FFFBD6',
 					blue: '#D6F5FF',
 				},
+				// Added high contrast text colors
+				contrast: {
+					light: '#121212', // Dark text for light backgrounds
+					dark: '#F8F9FA',  // Light text for dark backgrounds
+					accent: '#000000' // Black text for colorful backgrounds
+				}
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
