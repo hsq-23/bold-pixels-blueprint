@@ -35,7 +35,7 @@ const Hero: React.FC = () => {
             <div className="w-full pb-[100%] bg-gray-200 border-2 border-black overflow-hidden">
               {/* Replace with actual image */}
               <img 
-                src="public/IMG_20230710_015043.jpg" 
+                src="IMG_20230710_015043.jpg" 
                 alt="Elvan Nasrul's Portrait" 
                 className="absolute top-0 left-0 w-full h-full object-cover"
               />
