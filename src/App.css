@@ -43,13 +43,3 @@
 .read-the-docs {
   color: #444;
 }
-
-/* High contrast mode */
-.dark .card {
-  background-color: #333;
-  color: white;
-}
-
-.dark .read-the-docs {
-  color: #bbb;
-}

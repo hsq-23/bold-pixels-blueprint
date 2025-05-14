@@ -38,36 +38,6 @@
 
     --radius: 0.5rem;
   }
-
-  .dark {
-    --background: 20 14.3% 4.1%;
-    --foreground: 60 9.1% 97.8%;
-
-    --card: 20 14.3% 4.1%;
-    --card-foreground: 60 9.1% 97.8%;
-
-    --popover: 20 14.3% 4.1%;
-    --popover-foreground: 60 9.1% 97.8%;
-
-    --primary: 262 83.3% 57.8%;
-    --primary-foreground: 60 9.1% 97.8%;
-
-    --secondary: 60 94.2% 72.5%;
-    --secondary-foreground: 24 9.8% 10%;
-
-    --muted: 12 6.5% 15.1%;
-    --muted-foreground: 24 5.4% 63.9%;
-
-    --accent: 327 73.3% 72.9%;
-    --accent-foreground: 60 9.1% 97.8%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 60 9.1% 97.8%;
-
-    --border: 12 6.5% 15.1%;
-    --input: 12 6.5% 15.1%;
-    --ring: 24 5.7% 82.9%;
-  }
 }
 
 @layer base {
@@ -78,55 +48,6 @@
   body {
     @apply bg-background text-foreground font-space-grotesk transition-colors duration-200;
   }
-  
-  /* Dark mode adjustments for better visibility */
-  .dark .neo-card {
-    @apply bg-gray-800 border-4 border-white shadow-neo transition-all duration-300 hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-neo-lg;
-  }
-  
-  .dark .neo-button {
-    @apply border-2 border-white px-8 py-3 shadow-neo-sm font-bold transition-all duration-200 hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-neo;
-    background-color: #FFEC5C; /* Use the direct hex color instead of utility class */
-    color: #000000; /* Ensuring black text on yellow background for maximum contrast */
-  }
-  
-  .dark .neo-input {
-    @apply bg-gray-800 border-2 border-white px-4 py-2 focus:outline-none focus:ring-2 focus:ring-white;
-  }
-  
-  /* Ensure icons are visible in dark mode */
-  .dark svg {
-    @apply text-white; /* Using white instead of text-contrast-dark for better contrast */
-  }
-
-  /* Improved text contrast for headings in dark mode */
-  .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
-    @apply text-white; /* Plain white for maximum visibility */
-  }
-
-  /* Improved text contrast for paragraphs in dark mode */
-  .dark p {
-    @apply text-gray-100; /* Lighter gray for better visibility */
-  }
-
-  /* Improved contrast for links in dark mode */
-  .dark a:not(.neo-button) {
-    @apply hover:text-white transition-colors;
-    color: #7ED7FF; /* Lighter blue for better visibility on dark backgrounds */
-    text-shadow: 0px 0px 1px rgba(0,0,0,0.2); /* Subtle text shadow to increase readability */
-  }
-
-  /* Improved contrast for colorful backgrounds in dark mode */
-  .dark .bg-pastel-blue, .dark .bg-pastel-green, .dark .bg-pastel-yellow, .dark .bg-pastel-pink {
-    @apply border-white;
-    color: #000000; /* Explicitly setting black text on pastel backgrounds */
-  }
-  
-  /* Fix circular dependency by using direct colors instead of utility classes */
-  .dark .bg-neon-blue, .dark .bg-neon-green, .dark .bg-neon-yellow, .dark .bg-neon-pink {
-    @apply border-white;
-    color: #000000; /* Explicitly setting black text on neon backgrounds */
-  }
 }
 
 @layer components {
@@ -135,7 +56,7 @@
   }
   
   .neo-card-colored {
-    @apply border-4 border-black dark:border-white shadow-neo transition-all duration-300 hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-neo-lg;
+    @apply border-4 border-black shadow-neo transition-all duration-300 hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-neo-lg;
   }
   
   .neo-button {
@@ -146,21 +67,21 @@
   }
   
   .neo-input {
-    @apply bg-white border-2 border-black px-4 py-2 focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white;
+    @apply bg-white border-2 border-black px-4 py-2 focus:outline-none focus:ring-2 focus:ring-black;
   }
   
-  /* Neo-brutalist headings with better dark mode support */
+  /* Neo-brutalist headings */
   .neo-heading {
-    @apply font-bold font-space-grotesk border-4 border-black dark:border-white shadow-neo px-6 py-3 inline-block;
+    @apply font-bold font-space-grotesk border-4 border-black shadow-neo px-6 py-3 inline-block;
   }
   
   .section-divider {
-    @apply h-2 bg-black dark:bg-white my-0;
+    @apply h-2 bg-black my-0;
   }
 
   /* Text contrast helpers with improved visibility */
   .text-high-contrast {
-    @apply text-black dark:text-white;
+    @apply text-black;
   }
 
   .text-on-accent {
@@ -169,11 +90,11 @@
   
   /* New helpers for specific background types */
   .text-on-neon {
-    @apply text-black dark:text-black; /* Always black on neon colors */
+    @apply text-black; /* Always black on neon colors */
   }
   
   .text-on-pastel {
-    @apply text-black dark:text-black; /* Always black on pastel colors */
+    @apply text-black; /* Always black on pastel colors */
   }
   
   .text-on-light {
