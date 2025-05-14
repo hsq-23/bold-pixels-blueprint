@@ -76,7 +76,25 @@
   }
 
   body {
-    @apply bg-background text-foreground font-space-grotesk;
+    @apply bg-background text-foreground font-space-grotesk transition-colors duration-200;
+  }
+  
+  /* Dark mode adjustments for better visibility */
+  .dark .neo-card {
+    @apply bg-gray-800 border-4 border-white shadow-neo transition-all duration-300 hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-neo-lg;
+  }
+  
+  .dark .neo-button {
+    @apply bg-neon-yellow border-2 border-white text-black px-8 py-3 shadow-neo-sm font-bold transition-all duration-200 hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-neo;
+  }
+  
+  .dark .neo-input {
+    @apply bg-gray-800 border-2 border-white px-4 py-2 focus:outline-none focus:ring-2 focus:ring-white;
+  }
+  
+  /* Ensure icons are visible in dark mode */
+  .dark svg {
+    @apply text-current;
   }
 }
 
@@ -86,7 +104,7 @@
   }
   
   .neo-card-colored {
-    @apply border-4 border-black shadow-neo transition-all duration-300 hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-neo-lg;
+    @apply border-4 border-black dark:border-white shadow-neo transition-all duration-300 hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-neo-lg;
   }
   
   .neo-button {
@@ -94,6 +112,15 @@
   }
   
   .neo-input {
-    @apply bg-white border-2 border-black px-4 py-2 focus:outline-none focus:ring-2 focus:ring-black;
+    @apply bg-white border-2 border-black px-4 py-2 focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white;
+  }
+  
+  /* Neo-brutalist headings with better dark mode support */
+  .neo-heading {
+    @apply font-bold font-space-grotesk border-4 border-black dark:border-white shadow-neo px-6 py-3 inline-block;
+  }
+  
+  .section-divider {
+    @apply h-2 bg-black dark:bg-white my-0;
   }
 }
