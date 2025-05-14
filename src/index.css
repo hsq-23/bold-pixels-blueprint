@@ -85,7 +85,8 @@
   }
   
   .dark .neo-button {
-    @apply bg-neon-yellow border-2 border-white text-contrast-accent px-8 py-3 shadow-neo-sm font-bold transition-all duration-200 hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-neo;
+    @apply border-2 border-white text-contrast-accent px-8 py-3 shadow-neo-sm font-bold transition-all duration-200 hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-neo;
+    background-color: #FFEC5C; /* Use the direct hex color instead of utility class */
   }
   
   .dark .neo-input {
@@ -109,7 +110,8 @@
 
   /* Improved contrast for links in dark mode */
   .dark a:not(.neo-button) {
-    @apply text-neon-blue hover:text-white transition-colors;
+    @apply hover:text-white transition-colors;
+    color: #5CE1FF; /* Use direct hex color instead of utility class */
   }
 
   /* Improved contrast for colorful backgrounds in dark mode */
@@ -117,6 +119,7 @@
     @apply text-contrast-accent border-white;
   }
   
+  /* Fix circular dependency by using direct colors instead of utility classes */
   .dark .bg-neon-blue, .dark .bg-neon-green, .dark .bg-neon-yellow, .dark .bg-neon-pink {
     @apply text-contrast-accent border-white;
   }
@@ -132,7 +135,9 @@
   }
   
   .neo-button {
-    @apply bg-neon-yellow border-2 border-black text-contrast-accent px-8 py-3 shadow-neo-sm font-bold transition-all duration-200 hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-neo;
+    border: 2px solid black;
+    background-color: #FFEC5C; /* Use direct hex color instead of utility class */
+    @apply text-contrast-accent px-8 py-3 shadow-neo-sm font-bold transition-all duration-200 hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-neo;
   }
   
   .neo-input {
