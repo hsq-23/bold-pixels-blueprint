@@ -1,8 +1,8 @@
-
 import React from 'react';
 import Layout from '../components/Layout';
 import ContactForm from '../components/ContactForm';
 import { Github, Linkedin, Mail, Instagram } from 'lucide-react';
+import { motion } from "framer-motion";
 
 const Contact = () => {
   return (
@@ -10,10 +10,22 @@ const Contact = () => {
       {/* Hero Section */}
       <section className="py-20 bg-neon-green">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 font-space-grotesk">Get In Touch</h1>
-          <p className="text-xl max-w-4xl">
+          <motion.h1
+            className="text-4xl md:text-5xl font-bold mb-6 font-space-grotesk"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            Get In Touch
+          </motion.h1>
+          <motion.p
+            className="text-xl max-w-4xl"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
             Have a project in mind? Want to collaborate? Or just want to say hi? I'd love to hear from you.
-          </p>
+          </motion.p>
         </div>
       </section>
       

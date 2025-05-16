@@ -1,7 +1,7 @@
-
 import React, { useState } from 'react';
 import Layout from '../components/Layout';
 import BlogCard from '../components/BlogCard';
+import { motion } from "framer-motion";
 
 // Sample blog posts data
 const blogPosts = [
@@ -81,10 +81,22 @@ const Blog = () => {
       {/* Hero Section */}
       <section className="py-20 bg-neon-blue text-white">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 font-space-grotesk">Blog</h1>
-          <p className="text-xl max-w-4xl">
+          <motion.h1
+            className="text-4xl md:text-5xl font-bold mb-6 font-space-grotesk"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            Blog
+          </motion.h1>
+          <motion.p 
+            className="text-xl max-w-4xl"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
             Thoughts, insights, and tutorials on web development, IoT, and data science.
-          </p>
+          </motion.p>
         </div>
       </section>
       

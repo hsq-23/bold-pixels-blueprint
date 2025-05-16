@@ -1,8 +1,8 @@
-
 import React from 'react';
 import Layout from '../components/Layout';
 import SkillsList from '../components/SkillsList';
 import { Link } from 'react-router-dom';
+import { motion } from "framer-motion";
 
 // Sample skills data
 const technicalSkills = [
@@ -40,10 +40,22 @@ const About = () => {
       {/* Hero Section */}
       <section className="py-20 bg-pastel-blue">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 font-space-grotesk">About Me</h1>
-          <p className="text-xl max-w-4xl">
+          <motion.h1
+            className="text-4xl md:text-5xl font-bold mb-6 font-space-grotesk"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            About Me
+          </motion.h1>
+          <motion.p 
+            className="text-xl max-w-4xl"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
             I'm a multidisciplinary tech professional with expertise in web development, IoT solutions, and data science. I love solving complex problems and creating user-friendly experiences.
-          </p>
+          </motion.p>
         </div>
       </section>
       
