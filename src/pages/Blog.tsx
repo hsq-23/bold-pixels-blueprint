@@ -1,7 +1,7 @@
+
 import React, { useState } from 'react';
 import Layout from '../components/Layout';
 import BlogCard from '../components/BlogCard';
-import { motion } from 'framer-motion';
 
 // Sample blog posts data
 const blogPosts = [
@@ -65,8 +65,8 @@ const blogPosts = [
 const categories = ["All", "Web Development", "IoT", "Data Science"];
 
 const Blog = () => {
-  const [activeCategory, setActiveCategory] = React.useState("All");
-  const [searchTerm, setSearchTerm] = React.useState("");
+  const [activeCategory, setActiveCategory] = useState("All");
+  const [searchTerm, setSearchTerm] = useState("");
 
   const filteredPosts = blogPosts.filter(post => {
     const matchesCategory = activeCategory === "All" || post.category === activeCategory;
@@ -78,25 +78,13 @@ const Blog = () => {
 
   return (
     <Layout>
-      {/* Hero Section with animation */}
+      {/* Hero Section */}
       <section className="py-20 bg-neon-blue text-white">
         <div className="container mx-auto px-4">
-          <motion.h1 
-            className="text-4xl md:text-5xl font-bold mb-6 font-space-grotesk"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            Blog
-          </motion.h1>
-          <motion.p 
-            className="text-xl max-w-4xl"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 font-space-grotesk">Blog</h1>
+          <p className="text-xl max-w-4xl">
             Thoughts, insights, and tutorials on web development, IoT, and data science.
-          </motion.p>
+          </p>
         </div>
       </section>
       
