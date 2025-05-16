@@ -2,7 +2,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import ArrowBackButton from './ArrowBackButton';
 
 const heroVariants = {
   hidden: { opacity: 0, y: 40 },
@@ -12,7 +11,7 @@ const heroVariants = {
 const Hero: React.FC = () => {
   return (
     <section className="py-20 md:py-32 relative overflow-x-clip">
-      <ArrowBackButton />
+      {/* Removed ArrowBackButton */}
       <motion.div
         className="absolute inset-0 bg-pastel-yellow -z-10"
         initial={{ opacity: 0 }}
